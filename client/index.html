@@ -8,13 +8,21 @@
   </head>
 
   <body>
+    <div id="nav-module"></div>
     <div id="booking-module"></div>
     <div id="description-module"></div>
+    <script type="text/javascript" src="http://localhost:3223/bundle.js"></script>
     <script type="text/javascript" src="http://localhost:3002/bundle.js"></script>
     <script type="text/javascript" src="http://localhost:3116/host/1/bundle.js"></script>
     <script>
         ReactDOM.render(
-          React.createElement(App, {id: 1}),
+          React.createElement(Nav),
+          document.getElementById('nav-module')
+        );
+    </script>
+    <script>
+        ReactDOM.render(
+          React.createElement(Description),
           document.getElementById('description-module')
         );
     </script>
