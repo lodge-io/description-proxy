@@ -1,0 +1,23 @@
+
+#booking-module {
+  position: fixed;
+  float: right;
+  margin-right: 4%;
+  width: 30%;
+  margin-left: 65%;
+}
+
+#description-module {
+  float: left;
+  padding-left: 13%;
+  width: 50%;
+  margin-right: 0px;
+  padding-bottom: 10px;
+}
+
+#reviews-module {
+  float: left;
+  padding-left: 13%;
+  width: 50%;
+  margin-right: 0px;
+}

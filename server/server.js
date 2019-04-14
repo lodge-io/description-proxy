@@ -16,7 +16,7 @@ const nav = axios.create({
 });
 
 const description = axios.create({
-  baseURL: 'http://localhost:3116'
+  baseURL: 'http://13.58.246.140'
 });
 
 const gallery = axios.create({
@@ -24,9 +24,12 @@ const gallery = axios.create({
 });
 
 const review = axios.create({
-  baseURL: 'http://localhost:3000'
+  baseURL: 'http://54.183.31.137'
 });
 
+const booking = axios.create({
+  baseURL:'http://3.19.59.24'
+});
 
 app.get('/api/location/:query', (req, res) => {
   var query = req.params.query;
@@ -49,9 +52,16 @@ app.get('/rooms/:id/', (req, res) => {
     .catch(err => res.send(err))
 });
 
-app.get('/reviews/:id', (req, res) => {
+app.get('/api/reviews/:id', (req, res) => {
   var id = req.params.id;
-  review.get(`/reviews/${id}`)
+  review.get(`/api/reviews/${id}`)
+    .then(response => res.json(response.data))
+    .catch(err => res.send(err))
+});
+
+app.get('/listings/:id', (req, res) => {
+  var id = req.params.id;
+  booking.get(`/listings/${id}`)
     .then(response => res.json(response.data))
     .catch(err => res.send(err))
 });
